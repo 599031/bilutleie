@@ -28,7 +28,7 @@
     </style>
   </head>
   <body>
-    <h2>Bilutleige</h2>
+    <h2>Bilutleie</h2>
     <input type="text" placeholder="Search for available cars">
     <button class="button">Search Available Cars</button>
     <br><br>
