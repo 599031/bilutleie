@@ -2,22 +2,20 @@
 package bilutleie.controllere;
 
 import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import bilutleie.util.LoginUtil;
 
 
 @Controller
-@RequestMapping("/logout")													// "/logout" mappes til ALLE controllerne i klassen...
 public class LogoutController {
 	
-	private String LOGGED_OUT_MESSAGE = "Du er naa logget ut";
+	
+	private String LOGGED_OUT_MESSAGE = "Du er nå logget ut";
 	
 	
-	@PostMapping															// POST /logout er forespørselen for å logge ut
+	@PostMapping("/logout")													// Logger ut
     public String loggUt(HttpSession session, RedirectAttributes ra) {
 		
 		if (LoginUtil.erBrukerInnlogget(session)) {							// Kun hvis brukeren er innlogget...

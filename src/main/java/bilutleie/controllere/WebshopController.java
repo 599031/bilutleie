@@ -6,7 +6,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import bilutleie.model.Cart;
@@ -15,14 +14,14 @@ import bilutleie.util.LoginUtil;
 
 
 @Controller
-@RequestMapping("/webshop")													// "/webshop" mappes til ALLE controllerne i klassen...
 public class WebshopController {
 	
-	private String REQUIRES_LOGIN_MESSAGE = "Foresporselen din krever at du er innlogget";
+	
+	private String REQUIRES_LOGIN_MESSAGE = "Forespørselen din krever at du er innlogget";
 	
 	
-	@GetMapping																	// GET /webshop er forespørselen for å vise webshop-siden
-    public String visWebshoppen(HttpSession session, RedirectAttributes ra) {
+	@GetMapping("/webshop")														// Viser webshop-siden
+    public String visLedigeBiler(HttpSession session, RedirectAttributes ra) {
 		
 		if (!LoginUtil.erBrukerInnlogget(session)) {							// Hvis brukeren ikke er innlogget...
 			ra.addFlashAttribute("redirectMessage", REQUIRES_LOGIN_MESSAGE);	// ... legger vi til en melding i loginView
@@ -33,7 +32,7 @@ public class WebshopController {
 	
 	
 	
-	@PostMapping																// POST /webshop er forespørselen for å handle en/flere varer
+	@PostMapping("/webshop")													// POST /webshop er forespørselen for å handle en/flere varer
     public String leggVarerIHandlekurv(
     		@RequestParam(name="vare", required=false) List<String> varer,		// required=false for å unngå krasj hvis ingen avkrysset
     		HttpSession session, RedirectAttributes ra) {
@@ -51,7 +50,7 @@ public class WebshopController {
 			if (varer.contains("genser"))										// Hvis listen inneholder "genser" (value="genser" i JSP)...
 				cart.addItem(new CartItem("Genser", 399));						// ... oppretter og legger til CartItem i cart
 		}
-		return "redirect:" + "webshop";										// Gjør en redirect til "/webshop"
+		return "redirect:" + "webshop";											// Gjør en redirect til "/webshop"
     }
 	
 }

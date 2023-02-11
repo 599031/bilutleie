@@ -3,15 +3,9 @@ package bilutleie.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Value;	// SLETTES TIL SLUTT
 
 
 public class Cart {
-	
-	
-	@Value("${app.message.prove}")				// SLETTES TIL SLUTT
-	private String MELDING;						// SLETTES TIL SLUTT
-	
 	
 	private List<CartItem> items = new ArrayList<>();
 	
@@ -33,11 +27,6 @@ public class Cart {
 	
 	public int getTotal() {
 		return items.stream().mapToInt(i -> i.getPrice() * i.getQuantity()).sum();
-	}
-	
-	
-	public void skrivUt() {					// SLETTES TIL SLUTT
-		System.err.println(MELDING);
 	}
 	
 }

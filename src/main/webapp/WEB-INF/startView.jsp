@@ -1,8 +1,9 @@
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%-- Linjen over må alltid være med som første linje i filen --%>
 
 <!DOCTYPE html>
 <html>
+  
   <head>
     <style>
       .button {
@@ -27,6 +28,7 @@
       }
     </style>
   </head>
+  
   <body>
     <h2>Bilutleie</h2>
     <input type="text" placeholder="Search for available cars">
@@ -34,6 +36,13 @@
     <br><br>
     <button class="button">Logg inn</button>
     <button class="button">Velg lokasjon</button>
+    
+    <form action="login" method="get">
+		<fieldset>
+		<p><input type="submit" value="Logg inn"/></p>
+		</fieldset>
+	</form>
+    
   </body>
 </html>
 
