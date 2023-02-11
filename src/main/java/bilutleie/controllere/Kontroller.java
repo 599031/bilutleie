@@ -18,7 +18,7 @@ public class Kontroller {
 		return "index";								// ... og returnere "Hallo verden!" tilbake til nettleseren
 	}
 	
-	
+	//notat
 	
 	@GetMapping("/lokasjon")
 	public String hentLokasjon(@RequestParam String lokasjon) {
