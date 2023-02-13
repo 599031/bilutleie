@@ -1,48 +1,41 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> <%-- JSP Standard Tag Library --%>
 <!DOCTYPE html>
 <html>
   
   <head>
-    <style>
-      .button {
-        background-color: black;
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-      }
-      input[type="text"] {
-        width: 50%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: 2px solid black;
-        border-radius: 4px;
-      }
-    </style>
+  <link rel="stylesheet" href="css/simple.css">
+
   </head>
   
   <body>
-    <h2>Bilutleie</h2>
-    <input type="text" placeholder="Search for available cars">
-    <button class="button">Search Available Cars</button>
+    
+    
+    
+      <h2>Bilutleie</h2>
+      
+      <fieldset>
+      <form action="lokasjon" method="get">
+    	<select id="lokasjon" name="lokasjon">
+      <option value="">Velg lokasjon</option>
+      <option value="Flesland">Flesland</option>
+      <option value="Bergen">Bergen</option>
+      <option value="Stavanger">Stavanger</option>
+    </select>
+    <p><input type="submit" value="Søk"/></p>
+    </form>
     <br><br>
-    <button class="button">Logg inn</button>
-    <button class="button">Velg lokasjon</button>
+		
+		
     
     <form action="login" method="get">
-		<fieldset>
+	
 		<p><input type="submit" value="Logg inn"/></p>
-		</fieldset>
+		
+	
 	</form>
-    
+    </fieldset>
   </body>
 </html>
 

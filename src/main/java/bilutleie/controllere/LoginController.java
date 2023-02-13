@@ -33,7 +33,7 @@ public class LoginController {
 			return "redirect:" + "login";								// ... og gjør så en redirect tilbake til "/login"
 		}
 		LoginUtil.loggInnBruker(request, username);						// Logger inn brukeren vha. egen hjelpemetode fra LoginUtil
-		return "redirect:" + "webshop";									// Gjør en redirect til "/biler"
+		return "redirect:" + "startside";									// Gjør en redirect til "/biler"
     }
 	
 }
